@@ -1,0 +1,30 @@
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Favourite Colour</th>
+      <th>Hobby</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{person.first_name}}</td>
+      <td>{{person.last_name}}</td>
+      <td>{{person.age}}</td>
+      <td>{{person.favourite_colour}}</td>
+      <td>{{person.hobby}}</td>
+      <td>
+        <button (click)="deletePerson(person)" class="btn btn-danger"> Delete Person</button>
+      </td>
+      <td>
+        <button (click)="editPerson(person)" class="btn btn-danger" [ngStyle]="{background:'black'}"> Edit Person
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

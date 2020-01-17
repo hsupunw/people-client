@@ -1,0 +1,13 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <ul class="navbar-nav">
+      <li><a *ngIf="loginService.isUserLoggedIn()" [ngStyle]="{background:'blue', color: 'white'}" class="nav-link"
+             routerLink="/">Home</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" [ngStyle]="{background:'green', color: 'white'}" class="nav-link"
+             routerLink="/add-person">Add New Person</a></li>
+      <li><a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="/login">Login</a></li>
+      <li><a *ngIf="loginService.isUserLoggedIn()" [ngStyle]="{right:'10px', position: 'absolute', background:'red', color: 'white'}" class="nav-link"
+             routerLink="/logout">Log Out</a></li>
+    </ul>
+  </nav>
+</header>

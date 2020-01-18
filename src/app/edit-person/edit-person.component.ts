@@ -21,7 +21,7 @@ export class EditPersonComponent implements OnInit {
 
   updatePerson(): void {
     this.person.hobby = this.hobbyString.split(',');
-    this.httpClientService.createPerson(this.person)
+    this.httpClientService.updatePerson(this.person)
       .subscribe(data => {
         alert('Person updated successfully.');
       });

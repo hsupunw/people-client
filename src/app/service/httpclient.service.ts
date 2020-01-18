@@ -29,26 +29,29 @@ export class HttpClientService {
   }
 
   getPersons() {
-    const basicString = this.getHeaders();
-
-    const headers = new HttpHeaders(
-      {Authorization: basicString}
-    );
+    const headers = this.getHeaders();
     return this.httpClient.get<EmbeddedPersonResponse>('http://localhost:8080/persons', {headers});
   }
 
   public deletePerson(person: Person) {
-    return this.httpClient.delete<Person>('http://localhost:8080/persons' + '/' + person.id);
+    const headers = this.getHeaders();
+    return this.httpClient.delete<Person>('http://localhost:8080/persons' + '/' + person.id, {headers});
   }
 
   public createPerson(person: Person) {
-    return this.httpClient.post<Person>('http://localhost:8080/persons', person);
+    const headers = this.getHeaders();
+    return this.httpClient.post<Person>('http://localhost:8080/persons', person, {headers});
+  }
+
+  public updatePerson(person: Person) {
+    const headers = this.getHeaders();
+    return this.httpClient.put<Person>('http://localhost:8080/persons' + '/' + person.id, person, {headers});
   }
 
   getHeaders() {
-    const username = 'admin';
-    const password = 'password';
-    return 'Basic ' + window.btoa(username + ':' + password);
+    const username = sessionStorage.getItem('username');
+    const password = sessionStorage.getItem('password');
+    const headers: string = 'Basic ' + window.btoa(username + ':' + password);
+    return new HttpHeaders({Authorization: headers});
   }
-
 }

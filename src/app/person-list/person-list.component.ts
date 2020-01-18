@@ -16,7 +16,7 @@ export class PersonListComponent implements OnInit {
 
   ngOnInit() {
     this.httpClientService.getPersons().subscribe(
-      response => this.handleSuccessfulResponse(response._embedded.peopleModulePersonList),
+      response => this.handleSuccessfulResponse(response._embedded.persons),
     );
   }
 

@@ -17,7 +17,7 @@ class EmbeddedPersonResponse {
 }
 
 class EmbeddedPersonList {
-  peopleModulePersonList: Person[];
+  persons: Person[];
 }
 
 @Injectable({

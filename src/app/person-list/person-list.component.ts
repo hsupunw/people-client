@@ -20,7 +20,7 @@ export class PersonListComponent implements OnInit {
     );
   }
 
-  handleSuccessfulResponse(response) {
+  handleSuccessfulResponse(response): void {
     this.persons = response;
   }
 
@@ -31,7 +31,7 @@ export class PersonListComponent implements OnInit {
       });
   }
 
-  editPerson(person: Person) {
+  editPerson(person: Person): void {
     this.router.navigate(['edit-person'],
       {
         state:

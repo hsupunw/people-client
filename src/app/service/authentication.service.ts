@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 export class Message {
   constructor(public message: string,) {
@@ -15,7 +16,7 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient) {
   }
 
-  authenticate(username, password) {
+  authenticate(username, password): Observable<Message> {
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa(username + ':' + password)});
     return this.httpClient.get<Message>('http://localhost:8080/home', {headers}).pipe(
       map(
@@ -29,12 +30,12 @@ export class AuthenticationService {
     );
   }
 
-  isUserLoggedIn() {
+  isUserLoggedIn(): boolean {
     const user = sessionStorage.getItem('username');
     return !(user === null);
   }
 
-  logOut() {
+  logOut(): void {
     sessionStorage.removeItem('username');
   }
 }

@@ -8,7 +8,7 @@ import {HttpClientService, Person} from '../service/httpclient.service';
 })
 export class AddPersonComponent implements OnInit {
 
-  person: Person = new Person('', '', '', 25, '', []);
+  person: Person = new Person(null, '', '', 25, '', []);
   hobbyString = '';
 
   constructor(private httpClientService: HttpClientService) {

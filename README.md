@@ -7,6 +7,7 @@
 - Credentials
   - User Name: admin
   - Password: admin
+- Make sure you run https://github.com/hsupunw/people-base (backend) in order to see/add/change data
 
 ## Build
 - Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.

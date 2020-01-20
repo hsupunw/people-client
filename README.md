@@ -1,6 +1,6 @@
 # Project people-client
 - This is a sample Front end client application working with https://github.com/hsupunw/people-base
-- Alternatively, you can use one of these two as well https://github.com/hsupunw/people-base-data-rest , https://github.com/hsupunw/people-base-mongo
+- Alternatively, you can use one of these two as well. https://github.com/hsupunw/people-base-data-rest , https://github.com/hsupunw/people-base-mongo
 - This shows main CRUD operations with on person entities with basic authentication
 
 ## Prerequisite

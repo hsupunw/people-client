@@ -7,7 +7,7 @@
 - Angular 7 dev environment has been set up
 
 ## Development server
-- Run `ng serve` on project roor to run a dev server. Navigate to `http://localhost:4200/`.
+- On Project root, run `npm install` to install node modules. And then `ng serve` on to run a dev server. Navigate to `http://localhost:4200/`.
 - Credentials
   - User Name: admin
   - Password: admin
